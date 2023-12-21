@@ -8,7 +8,7 @@ function getComputerChoice() {
 
 function determineWinner(userChoice, computerChoice) {
   if (userChoice === computerChoice) {
-    return 'Ничья!';
+    return 'Результат: Ничья!';
   } if (userChoice === 'камень' && computerChoice === 'ножницы') {
     return `Результат: Вы победили! ${userChoice} бьет ${computerChoice}.`;
   }
@@ -18,7 +18,7 @@ function determineWinner(userChoice, computerChoice) {
   if (userChoice === 'бумага' && computerChoice === 'камень') {
     return `Результат: Вы победили! ${userChoice} покрывает ${computerChoice}.`;
   }
-  return 'Компьютер выиграл!';
+  return 'Результат: Компьютер выиграл!';
 }
 
 function game() {
