@@ -6,35 +6,35 @@ function getComputerChoice() {
   return options[randomIndex];
 }
 
-function determineWinner(userChoice, computerChoice) {
-  if (userChoice === 'bomb') {
+function determineWinner(playerChoice, computerChoice) {
+  if (playerChoice === 'bomb') {
     return 'Вы уничтожили своего оппонента! Поздравляю, но это уже читерство!';
   }
-  if (userChoice === computerChoice) {
+  if (playerChoice === computerChoice) {
     return 'Результат: Ничья!';
-  } if (userChoice === 'камень' && computerChoice === 'ножницы') {
-    return `Результат: Вы победили! ${userChoice} бьет ${computerChoice}.`;
+  } if (playerChoice === 'камень' && computerChoice === 'ножницы') {
+    return `Результат: Вы победили! ${playerChoice} бьет ${computerChoice}.`;
   }
-  if (userChoice === 'ножницы' && computerChoice === 'бумага') {
-    return `Результат: Вы победили! ${userChoice} режут ${computerChoice}.`;
+  if (playerChoice === 'ножницы' && computerChoice === 'бумага') {
+    return `Результат: Вы победили! ${playerChoice} режут ${computerChoice}.`;
   }
-  if (userChoice === 'бумага' && computerChoice === 'камень') {
-    return `Результат: Вы победили! ${userChoice} покрывает ${computerChoice}.`;
+  if (playerChoice === 'бумага' && computerChoice === 'камень') {
+    return `Результат: Вы победили! ${playerChoice} покрывает ${computerChoice}.`;
   }
   return 'Результат: Компьютер выиграл!';
 }
 
 function game() {
-  let userChoice = readlineSync.question('\nВыберите вашу фигуру: \n1. Камень \n2. Ножницы \n3. Бумага \n\nВаш выбор: ');
+  let playerChoice = readlineSync.question('\nВыберите вашу фигуру: \n1. Камень \n2. Ножницы \n3. Бумага \n\nВаш выбор: ');
 
-  userChoice = userChoice.toLowerCase();
-  if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага' || userChoice === 'bomb') {
+  playerChoice = playerChoice.toLowerCase();
+  if (playerChoice === 'камень' || playerChoice === 'ножницы' || playerChoice === 'бумага' || playerChoice === 'bomb') {
     const computerChoice = getComputerChoice();
-    console.log(`Вы выбрали: ${userChoice}`);
+    console.log(`Вы выбрали: ${playerChoice}`);
     console.log(`\nКомпьютер выбрал: ${computerChoice}`);
-    console.log(determineWinner(userChoice, computerChoice));
-    userChoice = readlineSync.question('\nХотите сыграть еще раз? (да/нет)').toLowerCase();
-    if (userChoice === 'да') {
+    console.log(determineWinner(playerChoice, computerChoice));
+    playerChoice = readlineSync.question('\nХотите сыграть еще раз? (да/нет)').toLowerCase();
+    if (playerChoice === 'да') {
       game();
     } else {
       console.log('\nСпасибо за игру! До встречи!');
@@ -43,7 +43,7 @@ function game() {
     console.log('Неверный выбор. Попробуйте еще раз.');
     game();
   }
-  if (userChoice === 'bomb') {
+  if (playerChoice === 'bomb') {
     console.log('Результат: Вы уничтожили своего оппонента! Поздравляю!');
   }
 }
