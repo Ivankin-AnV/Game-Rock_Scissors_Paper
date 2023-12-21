@@ -7,3 +7,5 @@
 ```
 $ node index.js
 ``` 
+
+[![asciicast](https://asciinema.org/a/rdrlfrgwn0fpouScbuEyEvzrF.svg)](https://asciinema.org/a/rdrlfrgwn0fpouScbuEyEvzrF)
