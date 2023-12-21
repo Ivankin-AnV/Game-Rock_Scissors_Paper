@@ -7,6 +7,9 @@ function getComputerChoice() {
 }
 
 function determineWinner(userChoice, computerChoice) {
+  if (userChoice === 'bomb') {
+    return 'Вы уничтожили своего оппонента! Поздравляю, но это уже читерство!';
+  }
   if (userChoice === computerChoice) {
     return 'Результат: Ничья!';
   } if (userChoice === 'камень' && computerChoice === 'ножницы') {
@@ -25,8 +28,7 @@ function game() {
   let userChoice = readlineSync.question('\nВыберите вашу фигуру: \n1. Камень \n2. Ножницы \n3. Бумага \n\nВаш выбор: ');
 
   userChoice = userChoice.toLowerCase();
-
-  if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага') {
+  if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага' || userChoice === 'bomb') {
     const computerChoice = getComputerChoice();
     console.log(`Вы выбрали: ${userChoice}`);
     console.log(`\nКомпьютер выбрал: ${computerChoice}`);
@@ -41,6 +43,10 @@ function game() {
     console.log('Неверный выбор. Попробуйте еще раз.');
     game();
   }
+  if (userChoice === 'bomb') {
+    console.log('Результат: Вы уничтожили своего оппонента! Поздравляю!');
+  }
 }
+
 console.log('Добро пожаловать в игру "Камень, Ножницы, Бумага"!');
 game();
