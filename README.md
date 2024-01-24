@@ -19,4 +19,4 @@ $ node index.js
 [![asciicast](https://asciinema.org/a/1iyOdR0UwgMbQ7HT5aO03c42W.svg)](https://asciinema.org/a/1iyOdR0UwgMbQ7HT5aO03c42W)
 
 
-"в игре есть чит-код 🪄 😱"
+"в игре есть чит-код U+1fa84 😱"
