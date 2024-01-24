@@ -7,8 +7,8 @@ function getComputerChoice() {
 }
 
 function determineWinner(playerChoice, computerChoice) {
-  if (playerChoice === 'bomb') {
-    return 'Вы уничтожили своего оппонента! Поздравляю, но это уже читерство!';
+  if (playerChoice === 'авада кедавра') {
+    return 'Вы использовали убивающее заклинание! Ваш оппонент умирает без мучений. Вы победили, но это уже читерство!';
   }
   if (playerChoice === computerChoice) {
     return 'Результат: Ничья!';
@@ -28,7 +28,7 @@ function game() {
   let playerChoice = readlineSync.question('\nВыберите вашу фигуру: \n1. Камень \n2. Ножницы \n3. Бумага \n\nВаш выбор: ');
 
   playerChoice = playerChoice.toLowerCase();
-  if (playerChoice === 'камень' || playerChoice === 'ножницы' || playerChoice === 'бумага' || playerChoice === 'bomb') {
+  if (playerChoice === 'камень' || playerChoice === 'ножницы' || playerChoice === 'бумага' || playerChoice === 'авада кедавра') {
     const computerChoice = getComputerChoice();
     console.log(`Вы выбрали: ${playerChoice}`);
     console.log(`\nКомпьютер выбрал: ${computerChoice}`);
@@ -43,8 +43,8 @@ function game() {
     console.log('Неверный выбор. Попробуйте еще раз.');
     game();
   }
-  if (playerChoice === 'bomb') {
-    console.log('Результат: Вы уничтожили своего оппонента! Поздравляю!');
+  if (playerChoice === 'авада кедавра') {
+    console.log('Результат: Вы использовали убивающее заклинание! Ваш оппонент умирает без мучений.');
   }
 }
 
